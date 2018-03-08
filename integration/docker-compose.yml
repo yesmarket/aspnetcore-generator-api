@@ -1,0 +1,14 @@
+version: '3.5'
+
+services:
+  generator:
+    image: 192.168.99.100:55000/gen-ci10
+    ports:
+      - "8080:80"
+  mail:
+    image: mailhog/mailhog
+    ports:
+      - "8025:8025"
+  integration:
+    image: 192.168.99.100:55000/gen-int11
+    build: .
